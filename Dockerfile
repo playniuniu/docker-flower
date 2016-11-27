@@ -5,7 +5,7 @@ ENV REDIS_BROKER="redis://redis:6379/0"
 
 RUN apk add --no-cache --update python3 \
     && pyvenv /env \
-    && /env/bin/pip install --no-cache-dir redis flower \
+    && /env/bin/pip install --no-cache-dir celery==3.1.25 redis flower \
     && rm -rf /var/cache/apk/* \
     && ln -s /env/bin/flower /usr/bin/flower
 
